@@ -1,16 +1,16 @@
-import { useState, useCallback, memo } from "react";
+import { useState, useCallback, memo } from 'react';
 
 interface DateFilterProps {
   className?: string;
-  onChange?: (value: "desc" | "asc") => void;
+  onChange?: (value: 'desc' | 'asc') => void;
 }
 
 export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
-  const [optionValue, setOptionValue] = useState<"desc" | "asc">("desc");
+  const [optionValue, setOptionValue] = useState<'desc' | 'asc'>('desc');
 
   const handleOptionChange = useCallback(() => {
     setOptionValue((prev) => {
-      const newValue = prev === "desc" ? "asc" : "desc";
+      const newValue = prev === 'desc' ? 'asc' : 'desc';
       onChange?.(newValue);
       return newValue;
     });
@@ -19,9 +19,9 @@ export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
   return (
     <div
       onClick={() => handleOptionChange()}
-      className={`w-[110px] h-[40px] flex items-center justify-between gap-1 py-2 px-3 border-2 border-[#F3F4F6] rounded-xl cursor-pointer select-none ${className}`}
+      className={`flex h-[40px] w-[110px] cursor-pointer items-center justify-between gap-1 rounded-xl border-2 border-[#F3F4F6] px-3 py-2 select-none ${className}`}
     >
-      <div className="flex items-center gap-[1px] w-6 h-6">
+      <div className="flex h-6 w-6 items-center gap-[1px]">
         <div>
           <svg
             width="10"
@@ -29,7 +29,7 @@ export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
             viewBox="0 0 10 13"
             fill="none"
             className={`transition-all duration-200 ease-in-out ${
-              optionValue === "desc" ? "text-[#9CA3AF]" : "text-[#111827]"
+              optionValue === 'desc' ? 'text-[#9CA3AF]' : 'text-[#111827]'
             }`}
           >
             <path
@@ -48,7 +48,7 @@ export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
               viewBox="0 0 10 13"
               fill="none"
               className={`transition-all duration-200 ease-in-out ${
-                optionValue === "asc" ? "text-[#9CA3AF]" : "text-[#111827]"
+                optionValue === 'asc' ? 'text-[#9CA3AF]' : 'text-[#111827]'
               }`}
             >
               <path
@@ -61,9 +61,9 @@ export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
           </div>
         </div>
       </div>
-      <span className="text-sm text-[#1F2937] font-medium">작성일</span>
+      <span className="text-sm font-medium text-[#1F2937]">작성일</span>
     </div>
   );
 });
 
-DateFilter.displayName = "DateFilter";
+DateFilter.displayName = 'DateFilter';
