@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: 기능을 추가 및 변경할 때 사용합니다.
-title: ""
-labels: ""
-assignees: ""
+title: ''
+labels: ''
+assignees: ''
 ---
 
 ## ✏️ 기능 설명
