@@ -1,16 +1,16 @@
-import { DateFilter } from "../components/dateFilter";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import { DateFilter } from '../components/dateFilter';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
-  title: "components/DateFilter",
+  title: 'components/DateFilter',
   component: DateFilter,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   args: {
-    className: "",
+    className: '',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof DateFilter>;
 
 export default meta;
