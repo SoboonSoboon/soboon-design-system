@@ -1,25 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Label } from '../components/Atoms/Label';
+import { fn } from 'storybook/test';
+
+import { TextInput } from '../../components/Atoms';
 
 const meta = {
-  title: 'Atoms/Label',
-  component: Label,
+  title: 'Atoms/TextInput',
+  component: TextInput,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   args: {
-    required: true,
+    onChange: fn(),
   },
-} satisfies Meta<typeof Label>;
+} satisfies Meta<typeof TextInput>;
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: '이름',
+    placeholder: '텍스트를 입력하세요',
   },
 };

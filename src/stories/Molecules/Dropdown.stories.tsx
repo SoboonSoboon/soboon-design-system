@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { fn } from 'storybook/test';
 
-import { Dropdown, type DropdownProps } from '../components/Molecules/Dropdown';
+import { Dropdown, type DropdownProps } from '../../components/Molecules';
 
 const meta = {
   title: 'Molecules/Dropdown',

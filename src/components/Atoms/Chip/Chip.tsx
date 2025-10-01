@@ -1,4 +1,4 @@
-import { cn } from '../../utils/cn';
+import { cn } from '../../../utils/cn';
 
 interface ChipProps {
   children: React.ReactNode;
@@ -14,9 +14,11 @@ export const Chip = ({ children, size = 'lg', isActive, onClick }: ChipProps) =>
         if (!isActive) onClick();
       }}
       className={cn(
-        'select-none rounded-full font-medium transition-colors min-w-12  items-center justify-center h-9 inline-flex',
-        size === 'lg' ? ' px-4 text-sm' : ' px-3 text-xs',
-        isActive ? 'bg-gray-900 text-white pointer-events-none' : 'bg-gray-50 text-black cursor-pointer'
+        'inline-flex h-9 min-w-12 items-center justify-center rounded-full font-medium transition-colors select-none',
+        size === 'lg' ? 'px-4 text-sm' : 'px-3 text-xs',
+        isActive
+          ? 'pointer-events-none bg-gray-900 text-white'
+          : 'cursor-pointer bg-gray-50 text-black',
       )}
     >
       {children}

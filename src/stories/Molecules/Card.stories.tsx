@@ -8,7 +8,7 @@ import {
   CardTitle,
   LikeButton,
   Line,
-} from '../components/Molecules/Card';
+} from '../../components/Molecules';
 
 const meta = {
   title: 'Molecules/Card',
