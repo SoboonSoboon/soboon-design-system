@@ -1,8 +1,8 @@
-import { DateFilter } from '../components/dateFilter';
+import { DateFilter } from '../components/Atoms/dateFilter';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
-  title: 'components/DateFilter',
+  title: 'Atoms/DateFilter',
   component: DateFilter,
   parameters: {
     layout: 'centered',

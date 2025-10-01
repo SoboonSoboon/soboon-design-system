@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import {
   Card,
   CardContent,
@@ -8,24 +8,24 @@ import {
   CardTitle,
   LikeButton,
   Line,
-} from "../components/Card";
+} from '../components/Molecules/Card';
 
 const meta = {
-  title: "components/Card",
+  title: 'Molecules/Card',
   component: Card,
   args: {
-    width: "376px",
-    height: "306px",
-    className: "",
+    width: '376px',
+    height: '306px',
+    className: '',
   },
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
-    width: { control: "text", description: "카드의 너비 px" },
-    height: { control: "text", description: "카드의 높이 px" },
-    className: { control: "text", description: "카드의 클래스명" },
+    width: { control: 'text', description: '카드의 너비 px' },
+    height: { control: 'text', description: '카드의 높이 px' },
+    className: { control: 'text', description: '카드의 클래스명' },
   },
 } satisfies Meta<typeof Card>;
 

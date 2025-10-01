@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Badge } from '../components/Badge';
+import { Badge } from '../components/Atoms/Badge';
 const meta: Meta<typeof Badge> = {
-  title: 'UI/Badge',
+  title: 'Atoms/Badge',
   component: Badge,
   args: { count: 1, max: 999, showZero: false },
   argTypes: {
