@@ -90,6 +90,10 @@
     font-size: 30px;
     line-height: 36px;
   }
+
+  .font-memomentKkukkkuk {
+    font-family: "memomentKkukkkuk", sans-serif !important;
+  }
 }
 
 * {
