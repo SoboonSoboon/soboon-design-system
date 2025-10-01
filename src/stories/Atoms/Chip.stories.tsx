@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Chip } from '../components/chip';
+import { Chip } from '../../components/Atoms';
 
 const meta: Meta<typeof Chip> = {
-  title: 'Components/Chip',
+  title: 'Atoms/Chip',
   component: Chip,
   tags: ['autodocs'],
   argTypes: {
@@ -19,7 +19,7 @@ const meta: Meta<typeof Chip> = {
   },
   decorators: [
     (Story) => (
-      <div className="flex justify-center items-center min-h-[200px] ">
+      <div className="flex min-h-[200px] items-center justify-center">
         <Story />
       </div>
     ),
