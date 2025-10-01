@@ -1,11 +1,11 @@
 import { useState, useCallback, memo } from 'react';
 
-interface DateFilterProps {
+interface DateSortToggleProps {
   className?: string;
   onChange?: (value: 'desc' | 'asc') => void;
 }
 
-export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
+export const DateSortToggle = memo(({ className, onChange }: DateSortToggleProps) => {
   const [optionValue, setOptionValue] = useState<'desc' | 'asc'>('desc');
 
   const handleOptionChange = useCallback(() => {
@@ -66,4 +66,4 @@ export const DateFilter = memo(({ className, onChange }: DateFilterProps) => {
   );
 });
 
-DateFilter.displayName = 'DateFilter';
+DateSortToggle.displayName = 'DateSortToggle';

@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useState } from 'react';
 
 interface cardContentProps {
   className?: string;
@@ -17,13 +17,7 @@ interface cardImageProps {
 }
 
 export const LikeButton = memo(
-  ({
-    liked = false,
-    onChange,
-  }: {
-    liked?: boolean;
-    onChange?: (liked: boolean) => void;
-  }) => {
+  ({ liked = false, onChange }: { liked?: boolean; onChange?: (liked: boolean) => void }) => {
     const [isLiked, setIsLiked] = useState(liked);
 
     const handleLike = () => {
@@ -44,28 +38,20 @@ export const LikeButton = memo(
       >
         <path
           d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-          fill={isLiked ? "#FF4805" : "#4e4e4e"}
-          stroke={isLiked ? "#FF4805" : "#4e4e4e"}
+          fill={isLiked ? '#FF4805' : '#4e4e4e'}
+          stroke={isLiked ? '#FF4805' : '#4e4e4e'}
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
       </svg>
     );
-  }
+  },
 );
 
-export const Card = ({
-  className,
-  children,
-  width = "306px",
-  height = "376px",
-}: cardProps) => {
+export const Card = ({ className, children, width = '306px', height = '376px' }: cardProps) => {
   return (
-    <div
-      className={`${className} select-none`}
-      style={{ width: `${width}`, height: `${height}` }}
-    >
+    <div className={`${className} select-none`} style={{ width: `${width}`, height: `${height}` }}>
       {children}
     </div>
   );
@@ -77,7 +63,7 @@ export const CardImage = ({ className, src, alt }: cardImageProps) => {
     <img
       src={src}
       alt={alt}
-      className={`${className} w-full h-[200px] rounded-lg mb-5 object-cover`}
+      className={`${className} mb-5 h-[200px] w-full rounded-lg object-cover`}
       loading="lazy"
       decoding="async"
     />
@@ -85,9 +71,7 @@ export const CardImage = ({ className, src, alt }: cardImageProps) => {
 };
 
 export const CardTitle = ({ className, children }: cardContentProps) => {
-  return (
-    <h3 className={`${className} text-2xl mb-3 text-[#1a1a1a]`}>{children}</h3>
-  );
+  return <h3 className={`${className} mb-3 text-2xl text-[#1a1a1a]`}>{children}</h3>;
 };
 
 export const CardSubtitle = ({ className, children }: cardContentProps) => {
@@ -95,7 +79,7 @@ export const CardSubtitle = ({ className, children }: cardContentProps) => {
 };
 
 export const CardContent = ({ className, children }: cardContentProps) => {
-  return <div className={`${className} text-left relative`}>{children}</div>;
+  return <div className={`${className} relative text-left`}>{children}</div>;
 };
 
 export const CardFooter = ({ className, children }: cardContentProps) => {
@@ -103,7 +87,7 @@ export const CardFooter = ({ className, children }: cardContentProps) => {
 };
 
 export const Line = ({ className }: cardContentProps) => {
-  return <div className={`${className} w-full h-[1px] bg-gray-200 my-5`}></div>;
+  return <div className={`${className} my-5 h-[1px] w-full bg-gray-200`}></div>;
 };
 
 interface mainCardProps {
@@ -115,13 +99,7 @@ interface mainCardProps {
 }
 
 // todo: 구조 파괴시 경고 메시지 발생
-export const MainCard = ({
-  classname,
-  image,
-  alt,
-  title,
-  subtitle,
-}: mainCardProps) => {
+export const MainCard = ({ classname, image, alt, title, subtitle }: mainCardProps) => {
   return (
     <>
       <Card className={classname}>

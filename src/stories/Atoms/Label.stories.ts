@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Label } from "../components/Atoms/Label";
+import { Label } from '../../components/Atoms';
 
 const meta = {
-  title: "Atoms/Label",
+  title: 'Atoms/Label',
   component: Label,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
     required: true,
   },
@@ -20,6 +20,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: "이름",
+    children: '이름',
   },
 };
