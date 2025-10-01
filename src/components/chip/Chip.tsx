@@ -1,6 +1,8 @@
-import { cn } from '../utils/cn';
+import type { ReactNode } from 'react';
+import { cn } from '../../utils/cn';
+
 interface ChipProps {
-  children: string;
+  children: ReactNode;
   size?: 'sm' | 'lg';
   isActive: boolean;
   onClick: () => void;
