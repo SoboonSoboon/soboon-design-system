@@ -8,5 +8,7 @@ export {
   LikeButton,
   Line,
   MainCard,
+  type cardProps,
 } from './Card';
 export { Dropdown, type DropdownProps } from './Dropdown';
+export { Header, type HeaderProps } from './Header';
