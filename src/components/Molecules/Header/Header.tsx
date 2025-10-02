@@ -1,6 +1,6 @@
-import { Button } from './Atoms/Button';
-import Logo from './Atoms/Logo';
-import ProfileImg from './Atoms/ProfileImg';
+import { Button } from '../../Atoms/Button';
+import Logo from '../../Atoms/Logo';
+import ProfileImg from '../../Atoms/ProfileImg';
 
 type User = {
   name: string;
