@@ -5,6 +5,7 @@ import './page.css';
 
 type User = {
   name: string;
+  image: string;
 };
 
 export const Page: React.FC = () => {
