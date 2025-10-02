@@ -17,7 +17,7 @@ export const Button = ({
 
   // Primary/Secondary styles
   const modeStyles = primary
-    ? 'bg-black text-white'
+    ? 'bg-black dark:bg-white text-white dark:text-black'
     : 'shadow-[rgba(0,0,0,0.15)_0px_0px_0px_1px_inset] bg-transparent text-[#333]';
 
   // Size styles

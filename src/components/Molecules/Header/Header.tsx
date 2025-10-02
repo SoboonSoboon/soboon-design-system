@@ -22,7 +22,7 @@ export const Header = ({
   onCreateAccount,
   onCreateGather,
 }: HeaderProps) => (
-  <header className="border-gray-10 h-15 border-b">
+  <header className="border-gray-10 h-15 border-b bg-white dark:bg-black">
     <div className="text-text-main mx-auto flex h-full max-w-[1344px] items-center justify-between bg-white px-12 dark:bg-black dark:text-white">
       <div className="flex items-center gap-6">
         <Logo width={75} height={28} />
