@@ -22,8 +22,8 @@ export const Button = ({
 
   // Size styles
   const sizeStyles = {
-    small: 'px-4 py-2.5 text-xs',
-    medium: 'px-5 py-[11px] text-sm',
+    small: 'px-4 py-2.5 text-base',
+    medium: 'px-5 py-[11px] text-base',
     large: 'px-6 py-3 text-base',
   };
 
