@@ -7,3 +7,4 @@ export { CardTitle } from './Card';
 export { LikeButton } from './Card';
 export { Line } from './Card';
 export { MainCard } from './Card';
+export type { cardProps } from './Card';

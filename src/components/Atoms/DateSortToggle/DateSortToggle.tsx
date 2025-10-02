@@ -1,6 +1,6 @@
 import { useState, useCallback, memo } from 'react';
 
-interface DateSortToggleProps {
+export interface DateSortToggleProps {
   className?: string;
   onChange?: (value: 'desc' | 'asc') => void;
 }
