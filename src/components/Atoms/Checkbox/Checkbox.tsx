@@ -6,11 +6,12 @@ interface CheckboxProps {
   disabled?: boolean;
   className?: string;
   id?: string;
+  onChange?: (checked: boolean) => void;
   name?: string;
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ checked, required = false, disabled = false, className, id, name }, ref) => {
+  ({ checked, required = false, disabled = false, className, id, name, onChange }, ref) => {
     return (
       <input
         ref={ref}
@@ -21,7 +22,10 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         className={`${className}`}
         id={id}
         name={name}
+        onChange={(e) => onChange?.(e.target.checked)}
       />
     );
   },
 );
+
+Checkbox.displayName = 'Checkbox';
