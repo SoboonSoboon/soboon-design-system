@@ -16,7 +16,7 @@ export const Page: React.FC = () => {
       <Header
         user={user}
         onLogin={() => setUser({ name: 'Jane Doe', image: '/images/default-avatar.png' })}
-        onLogout={() => setUser(undefined)}
+        // onLogout={() => setUser(undefined)}
         onCreateAccount={() => setUser({ name: 'Jane Doe', image: '/images/default-avatar.png' })}
       />
 
