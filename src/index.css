@@ -14,6 +14,7 @@
   --color-primary: #ff4805;
   --color-secondary: #ffd6cc;
   --color-tertiary: #561700;
+  --color-quaternary: #000000;
   --color-gray-5: #f5f5f5;
   --color-gray-10: #e0e0e0;
   --color-gray-20: #c8c8c8;
@@ -46,6 +47,17 @@
   --color-safe: #46c470;
   --color-dim: rgba(0, 0, 0, 0.3);
   --color-background: #fcfbfa;
+  --color-text-reversed-main: var(--color-white);
+  --color-text-reversed-sub1: var(--color-gray-5);
+  --color-text-line1: var(--color-gray-10);
+  --color-text-reversed-sub2: var(--color-gray-20);
+  --color-text-inactive: var(--color-gray-30);
+  --color-text-line2: var(--color-gray-30);
+  --color-text-sub2: var(--color-gray-60);
+  --color-text-sub1: var(--color-gray-80);
+  --color-text-main: var(--color-gray-95);
+  --color-background-inactive: var(--color-gray-5);
+  --color-background-alt: var(--color-white);
 }
 
 :root {
