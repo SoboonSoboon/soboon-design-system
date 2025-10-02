@@ -19,7 +19,7 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js"
     },
-    "./styles": "./dist/index.css"
+    "./styles": "./dist/output.css"
   },
   "scripts": {
     "dev": "vite",
