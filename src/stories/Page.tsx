@@ -15,9 +15,9 @@ export const Page: React.FC = () => {
     <article>
       <Header
         user={user}
-        onLogin={() => setUser({ name: 'Jane Doe' })}
+        onLogin={() => setUser({ name: 'Jane Doe', image: '/images/default-avatar.png' })}
         onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: 'Jane Doe' })}
+        onCreateAccount={() => setUser({ name: 'Jane Doe', image: '/images/default-avatar.png' })}
       />
 
       <section className="storybook-page">
