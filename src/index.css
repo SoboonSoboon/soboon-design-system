@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
-
 @font-face {
   font-family: 'memomentKkukkkuk';
   src: url('/font/memomentKkukkkuk.woff2') format('woff2');
@@ -147,5 +145,5 @@
 }
 
 * {
-  font-family: 'Pretendard', sans-serif !important;
+  font-family: 'pretendard', sans-serif !important;
 }
