@@ -11,5 +11,6 @@
 
     "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "__tests__", "jest.config.*", "setupTests.ts"]
+  "include": ["src", "__tests__", "jest.config.*", "setupTests.ts"],
+  "exclude": ["src/stories"]
 }
