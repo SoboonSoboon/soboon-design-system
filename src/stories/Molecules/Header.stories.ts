@@ -26,7 +26,7 @@ export const LoggedIn: Story = {
     user: {
       name: '너 구리',
       image:
-        'https://t1.daumcdn.net/brunch/service/user/4Khk/image/ChKpLN2D1AMVa2Fwr2s7sL2ZlWg.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpiJxZHaa1esOxgoZRV9XEIiGrMXF1p3mfAw&s',
     },
   },
 };

@@ -22,10 +22,10 @@ export const Header = ({
   onCreateAccount,
   onCreateGather,
 }: HeaderProps) => (
-  <header className="h-15">
-    <div className="border-gray-10 flex h-full items-center justify-between border-b bg-white px-12 text-black">
+  <header className="border-gray-10 h-15 border-b">
+    <div className="text-text-main mx-auto flex h-full max-w-[1344px] items-center justify-between bg-white px-12 dark:bg-black dark:text-white">
       <div className="flex items-center gap-6">
-        <Logo color="black" />
+        <Logo width={75} height={28} />
         <nav className="flex items-center gap-6 text-base font-normal">
           <a href="#" className="font-memomentKkukkkuk hover:text-primary whitespace-nowrap">
             함께 장보기
@@ -35,14 +35,16 @@ export const Header = ({
           </a>
         </nav>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-5">
         {user ? (
           <>
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-[10px]">
               <div className="h-10 w-10 overflow-hidden rounded-full">
                 <ProfileImg profile={user.image} />
               </div>
-              <b className="hidden md:block">{user.name}</b>
+              <b className="text-text-main hidden text-base font-semibold md:block dark:text-white">
+                {user.name}
+              </b>
             </span>
             <Button primary size="small" onClick={onCreateGather} label="모임 만들기" />
             {/* <Button size="small" onClick={onLogout} label="로그아웃" /> */}
