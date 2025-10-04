@@ -18,11 +18,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     dts({
-      entryRoot: 'src',
-      outDir: 'dist',
-      insertTypesEntry: true,
-      rollupTypes: true,
-      tsconfigPath: './tsconfig.json',
+      tsconfigPath: './tsconfig.app.json',
     }),
     viteStaticCopy({
       targets: [
