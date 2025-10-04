@@ -28,30 +28,15 @@ jobs:
       - name: Run tests
         run: npm test -- --passWithNoTests
 
-      - name: Get version bump type
-        id: version-bump
-        run: |
-          # Get the latest commit message
-          COMMIT_MSG=$(git log -1 --pretty=%B)
-
-          # Determine version bump type based on commit message
-          if echo "$COMMIT_MSG" | grep -qE "^(feat|feature)(\(.+\))?:"; then
-            echo "bump-type=minor" >> $GITHUB_OUTPUT
-            echo "Detected feat: commit, bumping minor version"
-          else
-            echo "bump-type=patch" >> $GITHUB_OUTPUT
-            echo "Detected non-feat commit, bumping patch version"
-          fi
-
       - name: Bump version
-        run: npm version ${{ steps.version-bump.outputs.bump-type }} --no-git-tag-version
+        run: npm version patch --no-git-tag-version
 
       - name: Commit version bump
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add package.json package-lock.json
-          git commit -m "Bump version [skip ci]"
+          git commit -m "Bump version [skip ci]" || exit 0
           git push
 
       - name: Build package
