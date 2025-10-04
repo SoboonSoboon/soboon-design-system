@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { fn } from 'storybook/test';
 
-import { Header } from '../../components/Molecules/Header/Header';
+import { Header } from '../../components/Molecules';
 
 const meta = {
-  title: 'Example/Header',
+  title: 'Molecules/Header',
   component: Header,
   tags: ['autodocs'],
   parameters: {
