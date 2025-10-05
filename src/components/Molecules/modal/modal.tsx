@@ -1,16 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { cn } from '../../../utils/cn';
 
-type ModalPosition =
-  | 'center'
-  | 'top'
-  | 'bottom'
-  | 'left'
-  | 'right'
-  | 'top-left'
-  | 'top-right'
-  | 'bottom-left'
-  | 'bottom-right';
+type ModalPosition = 'center' | 'top' | 'bottom' | 'left' | 'right';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -37,7 +28,7 @@ export const Modal = ({
         onClose();
       }
     },
-    [onclose],
+    [onClose],
   );
 
   useEffect(() => {
@@ -50,12 +41,13 @@ export const Modal = ({
   if (!isOpen) return null;
 
   //배경 클릭 처리 함수
-  const handleBackedClick = (event: React.MouseEvent) => {
+  const handleBackdropClick = (event: React.MouseEvent) => {
     if (!closeOnBackdropClick) return; // 옵션 off면 무시
     if (event.target === event.currentTarget) {
       onClose();
     }
   };
+
   const getPositionClass = () => {
     switch (position) {
       case 'top':
@@ -66,14 +58,6 @@ export const Modal = ({
         return 'items-center justify-start pl-8';
       case 'right':
         return 'items-center justify-end pr-8';
-      case 'top-left':
-        return 'items-start justify-start p-8';
-      case 'top-right':
-        return 'items-start justify-end p-8';
-      case 'bottom-left':
-        return 'items-end justify-start p-8';
-      case 'bottom-right':
-        return 'items-end justify-end p-8';
       case 'center':
       default:
         return 'items-center justify-center';
@@ -86,13 +70,13 @@ export const Modal = ({
         getPositionClass(),
         showBackdrop ? 'bg-black/50' : 'bg-transparent',
       )}
-      onClick={handleBackedClick}
+      onClick={handleBackdropClick}
     >
       <div
-        className={cn('rounded-lg bg-white p-6', {
-          'w-sm': size === 'sm',
-          'w-md': size === 'md',
-          'w-lg': size === 'lg',
+        className={cn('rounded-lg border border-gray-200 bg-white p-6 shadow-lg', {
+          'w-80 max-w-sm': size === 'sm',
+          'w-96 max-w-md': size === 'md',
+          'w-[32rem] max-w-lg': size === 'lg',
         })}
         onClick={(e) => e.stopPropagation()}
       >
