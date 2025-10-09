@@ -1,7 +1,7 @@
 export { Badge } from './Badge';
 export { Button } from './Button';
 export { Chip } from './Chip';
-export { DateSortToggle, type DateSortToggleProps } from './DateSortToggle';
+export { DateFilter, type DateFilterProps } from './DateFilter';
 export { Label } from './Label';
 export { Logo } from './Logo';
 export { ProfileImg } from './ProfileImg';
