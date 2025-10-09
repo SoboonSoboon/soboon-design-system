@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { cn } from '../../../utils/cn';
 
 type ModalPosition = 'center' | 'top' | 'bottom' | 'left' | 'right';
@@ -32,23 +32,24 @@ export const Modal = ({
   );
 
   useEffect(() => {
-    document.addEventListener('keydown', handleEscape);
+    if (!isOpen) return;
 
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, [handleEscape]);
-  if (!isOpen) return null;
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, handleEscape]);
 
   //배경 클릭 처리 함수
-  const handleBackdropClick = (event: React.MouseEvent) => {
-    if (!closeOnBackdropClick) return; // 옵션 off면 무시
-    if (event.target === event.currentTarget) {
-      onClose();
-    }
-  };
+  const handleBackdropClick = useCallback(
+    (event: React.MouseEvent) => {
+      if (!closeOnBackdropClick) return;
+      if (event.target === event.currentTarget) {
+        onClose();
+      }
+    },
+    [closeOnBackdropClick, onClose],
+  ); // 의존성 배열 추가
 
-  const getPositionClass = () => {
+  const getPositionClass = useMemo(() => {
     switch (position) {
       case 'top':
         return 'items-start justify-center pt-8';
@@ -62,12 +63,13 @@ export const Modal = ({
       default:
         return 'items-center justify-center';
     }
-  };
+  }, [position]);
+
   return (
     <div
       className={cn(
         'fixed inset-0 flex',
-        getPositionClass(),
+        getPositionClass,
         showBackdrop ? 'bg-black/50' : 'bg-transparent',
       )}
       onClick={handleBackdropClick}
