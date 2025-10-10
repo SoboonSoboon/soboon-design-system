@@ -1,9 +1,6 @@
 export { Badge } from './Badge';
-export { Button } from './Button';
 export { Chip } from './Chip';
 export { DateFilter, type DateFilterProps } from './DateFilter';
 export { Label } from './Label';
-export { Logo } from './Logo';
-export { ProfileImg } from './ProfileImg';
 export { Textarea } from './Textarea';
 export { TextInput } from './TextInput';

@@ -1,4 +1,6 @@
-import { Button, Logo, ProfileImg } from '../../Atoms';
+import { Button } from '../../Atoms/Button';
+import Logo from '../../Atoms/Logo';
+import ProfileImg from '../../Atoms/ProfileImg';
 
 type User = {
   name: string;
@@ -38,7 +40,7 @@ export const Header = ({
           <>
             <span className="flex items-center gap-[10px]">
               <div className="h-10 w-10 overflow-hidden rounded-full">
-                <ProfileImg profile={user.image || '/images/default-avatar.png'} />
+                <ProfileImg profile={user.image} />
               </div>
               <b className="text-text-main hidden text-base font-semibold md:block dark:text-white">
                 {user.name}
