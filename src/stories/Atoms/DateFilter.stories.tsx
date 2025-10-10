@@ -1,9 +1,9 @@
-import { DateSortToggle } from '../../components/Atoms';
+import { DateFilter } from '../../components/Atoms';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta = {
   title: 'Atoms/DateFilter',
-  component: DateSortToggle,
+  component: DateFilter,
   parameters: {
     layout: 'centered',
   },
@@ -11,7 +11,7 @@ const meta = {
     className: '',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof DateSortToggle>;
+} satisfies Meta<typeof DateFilter>;
 
 export default meta;
 

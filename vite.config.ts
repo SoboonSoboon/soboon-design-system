@@ -1,6 +1,8 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vite.dev/config/
 import path from 'node:path';
@@ -12,33 +14,68 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  test: {
-    projects: [
-      {
-        extends: true,
-        plugins: [
-          // The plugin will run tests for the stories defined in your Storybook config
-          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
-          storybookTest({
-            configDir: path.join(dirname, '.storybook'),
-          }),
-        ],
-        test: {
-          name: 'storybook',
-          browser: {
-            enabled: true,
-            headless: true,
-            provider: 'playwright',
-            instances: [
-              {
-                browser: 'chromium',
-              },
-            ],
-          },
-          setupFiles: ['.storybook/vitest.setup.ts'],
+  plugins: [
+    react(),
+    tailwindcss(),
+    dts({
+      tsconfigPath: './tsconfig.app.json',
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/output.css',
+          dest: '',
+        },
+      ],
+    }),
+  ],
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/index.tsx'),
+      fileName: (format) => `index.${format}.js`,
+      name: 'devsoo-storybook-design-system',
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
         },
       },
-    ],
+    },
+    sourcemap: true,
+    emptyOutDir: true,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['vitest.setup.ts'],
+    include: ['src/**/*.test.{ts,tsx}'],
+    exclude: ['**/*.stories.{ts,tsx,mdx}', '**/.storybook/**', 'node_modules', 'dist'],
+    // projects: [
+    //   {
+    //     extends: true,
+    //     plugins: [
+    //       storybookTest({
+    //         configDir: path.join(dirname, '.storybook'),
+    //       }),
+    //     ],
+    //     test: {
+    //       name: 'storybook',
+    //       browser: {
+    //         enabled: true,
+    //         headless: true,
+    //         provider: 'playwright',
+    //         instances: [
+    //           {
+    //             browser: 'chromium',
+    //           },
+    //         ],
+    //       },
+    //       setupFiles: ['.storybook/vitest.setup.ts'],
+    //     },
+    //   },
+    // ],
   },
 });

@@ -5,7 +5,7 @@ interface cardContentProps {
   children?: React.ReactNode;
 }
 
-interface cardProps extends cardContentProps {
+export interface cardProps extends cardContentProps {
   width?: string;
   height?: string;
 }
