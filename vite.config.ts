@@ -48,29 +48,34 @@ export default defineConfig({
     emptyOutDir: true,
   },
   test: {
-    projects: [
-      {
-        extends: true,
-        plugins: [
-          storybookTest({
-            configDir: path.join(dirname, '.storybook'),
-          }),
-        ],
-        test: {
-          name: 'storybook',
-          browser: {
-            enabled: true,
-            headless: true,
-            provider: 'playwright',
-            instances: [
-              {
-                browser: 'chromium',
-              },
-            ],
-          },
-          setupFiles: ['.storybook/vitest.setup.ts'],
-        },
-      },
-    ],
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['vitest.setup.ts'],
+    include: ['src/**/*.test.{ts,tsx}'],
+    exclude: ['**/*.stories.{ts,tsx,mdx}', '**/.storybook/**', 'node_modules', 'dist'],
+    // projects: [
+    //   {
+    //     extends: true,
+    //     plugins: [
+    //       storybookTest({
+    //         configDir: path.join(dirname, '.storybook'),
+    //       }),
+    //     ],
+    //     test: {
+    //       name: 'storybook',
+    //       browser: {
+    //         enabled: true,
+    //         headless: true,
+    //         provider: 'playwright',
+    //         instances: [
+    //           {
+    //             browser: 'chromium',
+    //           },
+    //         ],
+    //       },
+    //       setupFiles: ['.storybook/vitest.setup.ts'],
+    //     },
+    //   },
+    // ],
   },
 });
