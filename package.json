@@ -1,11 +1,8 @@
 {
   "name": "@soboon/design-system",
   "description": "Soboon Design System",
-  "publishConfig": {
-    "access": "public"
-  },
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "files": [
     "dist"
