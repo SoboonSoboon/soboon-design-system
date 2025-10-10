@@ -5,7 +5,7 @@
     "access": "public"
   },
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "files": [
     "dist"
@@ -15,6 +15,7 @@
   "types": "dist/index.d.ts",
   "style": "dist/output.css",
   "sideEffects": [
+    "**/*.css",
     "dist/output.css"
   ],
   "exports": {
@@ -23,7 +24,10 @@
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js"
     },
-    "./styles": "./dist/output.css"
+    "./styles": "./dist/output.css",
+    "./styles.css": "./dist/output.css",
+    "./dist/styles.css": "./dist/output.css",
+    "./dist/output.css": "./dist/output.css"
   },
   "scripts": {
     "dev": "vite",
