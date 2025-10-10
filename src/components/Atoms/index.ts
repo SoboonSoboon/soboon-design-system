@@ -7,4 +7,5 @@ export { Logo } from './Logo';
 export { ProfileImg } from './ProfileImg';
 export { Textarea } from './Textarea';
 export { TextInput } from './TextInput';
+export { Toast } from './Toast';
 export { Checkbox, type CheckboxProps } from './Checkbox';
