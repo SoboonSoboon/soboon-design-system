@@ -1,4 +1,4 @@
-export { Badge, Chip, DateSortToggle, Label, TextInput, Textarea } from './components/Atoms';
+export { Badge, Chip, DateFilter, Label, TextInput, Textarea } from './components/Atoms';
 export {
   Card,
   CardContent,
