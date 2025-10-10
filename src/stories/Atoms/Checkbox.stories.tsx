@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Checkbox } from '../../components/Atoms/Checkbox/Checkbox';
-import { Label } from '../../components/Atoms/Label/Label';
+import { Checkbox, Label } from '../../components/Atoms';
 import { useState } from 'react';
 
 const meta = {

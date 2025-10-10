@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-interface CheckboxProps {
+export interface CheckboxProps {
   checked?: boolean;
   required?: boolean;
   disabled?: boolean;
