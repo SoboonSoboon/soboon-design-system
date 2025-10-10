@@ -11,3 +11,4 @@ export {
   type cardProps,
 } from './Card';
 export { Dropdown, type DropdownProps } from './Dropdown';
+export { Header } from './Header';
