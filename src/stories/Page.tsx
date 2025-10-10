@@ -5,7 +5,6 @@ import './page.css';
 
 type User = {
   name: string;
-  image: string;
 };
 
 export const Page: React.FC = () => {
@@ -15,9 +14,9 @@ export const Page: React.FC = () => {
     <article>
       <Header
         user={user}
-        onLogin={() => setUser({ name: 'Jane Doe', image: '/images/default-avatar.png' })}
-        // onLogout={() => setUser(undefined)}
-        onCreateAccount={() => setUser({ name: 'Jane Doe', image: '/images/default-avatar.png' })}
+        onLogin={() => setUser({ name: 'Jane Doe' })}
+        onLogout={() => setUser(undefined)}
+        onCreateAccount={() => setUser({ name: 'Jane Doe' })}
       />
 
       <section className="storybook-page">
